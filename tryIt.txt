@@ -1,0 +1,4 @@
+ls *.txt
+rm !$
+or 
+alias rm=rm -i

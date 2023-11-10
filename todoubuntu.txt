@@ -1,0 +1,180 @@
+SYSTEM:
+check internet conncetion
+sudo apt get update && sudo apt get upgrade
+sudo apt install gnome-tweaks
+------------------------
+GIT:
+
+git config --global user.name "HmJustHanna"
+git config --global user.email "evdokimovaaa.job@gmail.com"
+
+type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+sudo apt update
+sudo apt install gh
+
+gh auth
+gh repo create
+
+git init
+git status
+git add
+git commit -m "..."
+
+git branch -M main
+
+git remote add origin URL
+git remote -v
+
+git push -u origin main
+
+------------------------
+
+TERMINAL:
+fonts:
+
+Gohu.zip->.fonts
+Preferences->Gohu,14
+
+theme:
+sudo apt-get install dconf-cli uuid-runtime
+Interactive mode:
+bash -c "$(wget -qO- https://git.io/vQgMr)"
+
+colors
+1EC86B green
+171A1B dark gray
+9D9F9A light gray
+75507B dark purple
+3465A4 dark blue
+C4A000 dark yellow
+D3D7CF whight
+
+Preferences->use transparent background
+
+.BASHRC
+
+export PS1="\u \t \W > "
+
+
+------------------------
+GEDIT:
+
+themes:
+https://github.com/gmate/gmate/blob/master/styles/Django.xml
+mv Django.xml ~/.local/share/gedit/styles
+
+------------------------
+MICRO:
+sudo apt install curl
+sudo apt-get install git
+curl https://getmic.ro | bash
+
+plugin install nordcolors
+^E set colorscheme nord-16
+
+plugin install ...
+-filemanager
+-nordcolors
+-snippets
+
+------------------------
+MONO:
+sudo apt update
+
+sudo apt install dirmngr gnupg apt-transport-https ca-certificates
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+
+sudo sh -c 'echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" > /etc/apt/sources.list.d/mono-official-stable.list'
+
+sudo apt update
+sudo apt install mono-complete
+
+mono --version
+
+csc hello.cs
+mono hello.exe
+-------------------
+NODEJS
+
+sudo apt-get update
+
+sudo apt-get install -y ca-certificates curl gnupg
+
+sudo mkdir -p /etc/apt/keyrings
+
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+
+//VERSION 16 IS LATEST FOR MY UBUNTU 18 BIONIC
+
+NODE_MAJOR=16
+
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+
+sudo apt-get update
+sudo apt-get install nodejs -y
+
+//UNINSTALL
+
+sudo apt-get purge nodejs &&\
+rm -r /etc/apt/sources.list.d/nodesource.list &&\rm -r /etc/apt/keyrings/nodesource.gpg
+
+---------------------
+SUBLIMETEXT
+
+ctrl-shift-p
+install package controll
+install pacakge:
+
+theme darkmatter
+(colorscheme darkmetter)
+
+//html/css
+
+AutoFileName
+emmet
+
+//javascript
+
+JavaScript snippets
+
+//settings
+
+{
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "Darkmatter.sublime-theme",
+	"font_size": 16,
+	"color_scheme": "Packages/Theme - Darkmatter/Darkmatter.tmTheme",
+	"remember_open_files": true,
+	"margin": 0,
+	"word_wrap": true,
+	"trim_trailling_white_space_on_save": false,
+
+}
+
+//keybindings
+
+[
+	{"keys": ["alt+shift+f"], "command": "reindent"}
+]
+//javascript
+
+tools->build system->new build system
+
+{
+	"cmd": ["node", "$file"],
+	"selector": "source.js"
+}
+-------
+CHROME
+DarkReader
+uBlock Origin
+Disable html5 autoplay (reloaded)
