@@ -1,12 +1,18 @@
+------------------------
+
 SYSTEM:
+
 check internet conncetion
 sudo apt get update && sudo apt get upgrade
 sudo apt install gnome-tweaks
 ------------------------
+
 GIT:
 
 git config --global user.name "HmJustHanna"
 git config --global user.email "evdokimovaaa.job@gmail.com"
+
+//install gitCLI
 
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -35,6 +41,7 @@ git push -u origin main
 ------------------------
 
 TERMINAL:
+
 fonts:
 
 Gohu.zip->.fonts
@@ -62,6 +69,7 @@ export PS1="\u \t \W > "
 
 
 ------------------------
+
 GEDIT:
 
 themes:
@@ -69,7 +77,9 @@ https://github.com/gmate/gmate/blob/master/styles/Django.xml
 mv Django.xml ~/.local/share/gedit/styles
 
 ------------------------
+
 MICRO:
+
 sudo apt install curl
 sudo apt-get install git
 curl https://getmic.ro | bash
@@ -83,7 +93,9 @@ plugin install ...
 -snippets
 
 ------------------------
+
 MONO:
+
 sudo apt update
 
 sudo apt install dirmngr gnupg apt-transport-https ca-certificates
@@ -100,6 +112,7 @@ mono --version
 csc hello.cs
 mono hello.exe
 -------------------
+
 NODEJS
 
 sudo apt-get update
@@ -125,6 +138,7 @@ sudo apt-get purge nodejs &&\
 rm -r /etc/apt/sources.list.d/nodesource.list &&\rm -r /etc/apt/keyrings/nodesource.gpg
 
 ---------------------
+
 SUBLIMETEXT
 
 ctrl-shift-p
@@ -165,8 +179,8 @@ JavaScript snippets
 [
 	{"keys": ["alt+shift+f"], "command": "reindent"}
 ]
-//javascript
 
+//javascript
 tools->build system->new build system
 
 {
@@ -174,7 +188,9 @@ tools->build system->new build system
 	"selector": "source.js"
 }
 -------
+
 CHROME
+
 DarkReader
 uBlock Origin
 Disable html5 autoplay (reloaded)
