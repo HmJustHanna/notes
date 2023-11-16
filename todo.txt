@@ -1,1 +1,3 @@
 настройка vim
+tab or spaces ??? micro editor micro 1tbs-style.txt !
+https://www.jwz.org/doc/tabs-vs-spaces.html
