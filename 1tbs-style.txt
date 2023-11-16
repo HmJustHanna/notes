@@ -1,0 +1,37 @@
+
+??? this is how I designate the questionable parts of the document ???
+
+
+
+IF
+
+
+
+if (
+    (this_is_the_first_part_of_a_long_condition)
+    && (the_second_part_is_shorter__wait_no_it_is_not)
+    && (and_one_more_for_the_road)
+) {
+    here_comes_the_block_code();
+}
+
+
+cond1 = this_is_the_first_part_of_a_long_condition;
+cond2 = the_second_part_is_shorter__wait_no_it_is_not;
+cond3 = and_one_more_for_the_road;
+if (cond1 && cond2 && cond3) {
+    here_comes_the_block_code();
+}
+
+
+void check_negative(x) {
+    if (x < 0) {
+        puts("Negative");
+    } else {
+        nonnegative(x);
+    }
+}
+
+
+
+
