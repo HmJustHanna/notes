@@ -7,6 +7,16 @@ sudo apt get update && sudo apt get upgrade
 sudo apt install gnome-tweaks
 ------------------------
 
+GITHUB
+
+//for beauty tabs in github
+//project should contain .editorconfig :
+
+[*]
+indent_style = tab
+indent_size = 4
+
+
 GIT:
 
 git config --global user.name "HmJustHanna"
@@ -32,6 +42,7 @@ git status
 git add
 git commit -m "..."
 
+//only for this time
 git branch -M main
 
 git remote add origin URL
