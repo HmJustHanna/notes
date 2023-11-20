@@ -10,17 +10,9 @@ commit:
 
 -what and for what?
 -consistency with words:
+add fix start done update
 
-ADD
-START
-DONE
-
-FIX
-UPDATE
-RENAME
-CUSTOMIZE
-
-git commit -m "ADD git commit tips " -m "see settings-customs"	
+git commit -m "add: func1.c (for sort) -> settings-customs"	
 
 --------------------
 
