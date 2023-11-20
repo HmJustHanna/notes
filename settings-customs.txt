@@ -23,7 +23,28 @@ git config --global user.name "HmJustHanna"
 git config --global user.email "evdokimovaaa.job@gmail.com"
 git config --global init.defaultBranch main
 
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.last 'log -1 HEAD'
+
+maybe you want to run an external command, rather than a Git subcommand. In that case, you start the command with a ! character.
+
 //install gitCLI
+
+git init
+git status
+git add
+git commit -m "..."
+
+//only for this time
+
+git branch -M main
+
+git remote add origin URL
+git remote -v
+git push -u origin main
 
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -36,19 +57,8 @@ sudo apt install gh
 
 gh auth
 gh repo create
-
-git init
-git status
-git add
-git commit -m "..."
-
-//only for this time
-git branch -M main
-
-git remote add origin URL
-git remote -v
-
-git push -u origin main
+gh repo list
+gh repo edit
 
 ------------------------
 
@@ -60,6 +70,7 @@ Gohu.zip->.fonts
 Preferences->Gohu,14
 
 theme:
+
 sudo apt-get install dconf-cli uuid-runtime
 Interactive mode:
 bash -c "$(wget -qO- https://git.io/vQgMr)"
@@ -79,7 +90,9 @@ Preferences->use transparent background
 ps
 ps vg
 
-.BASHRC
+------------------------
+
+.BASHRC:
 
 export PS1="\u \t \W > "
 
@@ -210,3 +223,4 @@ CHROME
 DarkReader
 uBlock Origin
 Disable html5 autoplay (reloaded)
+
