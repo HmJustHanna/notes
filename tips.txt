@@ -1,0 +1,43 @@
+C-CPP:
+
+...
+
+--------------------
+
+GIT:
+
+commit:
+
+-what and for what?
+-consistency with words:
+
+ADD
+START
+DONE
+
+FIX
+UPDATE
+RENAME
+CUSTOMIZE
+
+git commit -m "ADD git commit tips " -m "see settings-customs"	
+
+--------------------
+
+LINUX:
+
+...
+
+--------------------
+
+BASH:
+
+ls *.txt
+rm !$
+
+alias rm=rm -i
+
+see sed and awk commands
+
+curl -O https://disk.yandex.com/client/disk/...
+curl -o newfilename.txt https://disk.yandex.com/client/disk/...
