@@ -5,6 +5,16 @@ SYSTEM:
 check internet conncetion
 sudo apt get update && sudo apt get upgrade
 sudo apt install gnome-tweaks
+sudo apt install git
+sudo apt install vim
+sudo apt install build-essential
+
+additionally:
+
+sudo apt install curl
+sudo apt install tree
+sudo apt install neofetch
+
 ------------------------
 
 GITHUB
@@ -47,13 +57,15 @@ git remote -v
 git push -u origin main
 
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install gh -y
+
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+
+sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
 sudo apt update
-sudo apt install gh
+sudo apt install gh -y
 
 gh auth
 gh repo create
@@ -83,7 +95,7 @@ colors
 3465A4 dark blue
 C4A000 dark yellow
 D3D7CF whight
-
+990202 dark red
 Preferences->use transparent background
 
 //show prosseses
@@ -94,8 +106,20 @@ ps vg
 
 .BASHRC:
 
-export PS1="\u \t \W > "
+alias c='clear'
+alias runcs='runcs.sh'
 
+export PS1="\u \t \W > "
+export PATH=/home/anna/Documents/bash-scripts
+------------------------
+
+SCRIPTS:
+
+#!/bin/bash
+
+if(csc "$1.cs");then
+	mono "$1.exe"
+fi
 
 ------------------------
 
