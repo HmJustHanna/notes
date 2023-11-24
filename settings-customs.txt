@@ -26,6 +26,7 @@ GITHUB
 indent_style = tab
 indent_size = 4
 
+------------------------
 
 GIT:
 
@@ -57,17 +58,14 @@ git remote -v
 git push -u origin main
 
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
-
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
 sudo apt update
 sudo apt install gh -y
 
-gh auth
+gh auth login
 gh repo create
 gh repo list
 gh repo edit
@@ -137,33 +135,33 @@ sudo apt install curl
 sudo apt-get install git
 curl https://getmic.ro | bash
 
-plugin install nordcolors
-^E set colorscheme nord-16
+^E set colorscheme gotham
 
 plugin install ...
 -filemanager
 -nordcolors
 -snippets
 
+//about custom highlighting and theme
+
+https://github.com/zyedidia/micro/blob/master/runtime/help/colors.md
 ------------------------
 
 MONO:
 
 sudo apt update
-
 sudo apt install dirmngr gnupg apt-transport-https ca-certificates
-
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-
 sudo sh -c 'echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" > /etc/apt/sources.list.d/mono-official-stable.list'
 
 sudo apt update
 sudo apt install mono-complete
 
-mono --version
 
+mono --version
 csc hello.cs
 mono hello.exe
+
 -------------------
 
 NODEJS
@@ -171,17 +169,13 @@ NODEJS
 sudo apt-get update
 
 sudo apt-get install -y ca-certificates curl gnupg
-
 sudo mkdir -p /etc/apt/keyrings
-
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 
 //VERSION 16 IS LATEST FOR MY UBUNTU 18 BIONIC
 
 NODE_MAJOR=16
-
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-
 sudo apt-get update
 sudo apt-get install nodejs -y
 
@@ -229,8 +223,8 @@ JavaScript snippets
 
 //keybindings
 
-[
 	{"keys": ["alt+shift+f"], "command": "reindent"}
+[
 ]
 
 //javascript
@@ -240,7 +234,7 @@ tools->build system->new build system
 	"cmd": ["node", "$file"],
 	"selector": "source.js"
 }
--------
+------------------------
 
 CHROME
 
