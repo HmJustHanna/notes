@@ -14,6 +14,41 @@ additionally:
 sudo apt install curl
 sudo apt install tree
 sudo apt install neofetch
+------------------------
+
+INFO:
+
+sudo lshw
+
+CPU:
+
+sudo apt install util-linux
+sudo lscpu
+
+DISK:
+
+sudo lshw -C disk(or memory etc.)
+sudo lsblk - to list all disks, partition and size
+sudo fdisk -l for more detail
+sudo df -m -to list the mounted filesystems
+
+NETWORK:
+
+sudo lshw -short -C network
+sudo apt install net-tools
+sudo ifconfig -a
+
+MOUNTED:
+
+sudo lsusb
+sudo lspci
+
+SOFTWARE:
+
+sudo dmidecode -t bios -date and version of BIOS
+sudo uname -a
+
+
 
 ------------------------
 
