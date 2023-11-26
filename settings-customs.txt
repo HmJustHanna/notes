@@ -1,6 +1,6 @@
 ------------------------
 
-SYSTEM:
+MY-SYSTEM-UBUNTU-18.04:
 
 check internet conncetion
 sudo apt get update && sudo apt get upgrade
@@ -14,40 +14,27 @@ additionally:
 sudo apt install curl
 sudo apt install tree
 sudo apt install neofetch
+
+//error unable to download updates from extensions.gnome.org
+
+sudo add-apt-repository ppa:gnome-shell-extensions/ppa
+sudo apt-get update
+sudo apt-get install gnome-shell-extensions
+
+//error no wifi adapter found
+sudo apt-get install bcmwl-kernel-source 
 ------------------------
 
-INFO:
+BACKUPS:
 
-sudo lshw
+sudo add-apt-repository ppa:teejee2008/ppa
+sudo apt-get update
+sudo apt-get install timeshift -y
 
-CPU:
+------------------------
+FILESYSTEMS:
 
-sudo apt install util-linux
-sudo lscpu
-
-DISK:
-
-sudo lshw -C disk(or memory etc.)
-sudo lsblk - to list all disks, partition and size
-sudo fdisk -l for more detail
-sudo df -m -to list the mounted filesystems
-
-NETWORK:
-
-sudo lshw -short -C network
-sudo apt install net-tools
-sudo ifconfig -a
-
-MOUNTED:
-
-sudo lsusb
-sudo lspci
-
-SOFTWARE:
-
-sudo dmidecode -t bios -date and version of BIOS
-sudo uname -a
-
+sudo apt-get install exfat-fuse exfat-utils
 
 
 ------------------------
@@ -120,15 +107,11 @@ sudo apt-get install dconf-cli uuid-runtime
 Interactive mode:
 bash -c "$(wget -qO- https://git.io/vQgMr)"
 
-colors
+colors:
+
 1EC86B green
 171A1B dark gray
-9D9F9A light gray
-75507B dark purple
-3465A4 dark blue
-C4A000 dark yellow
-D3D7CF whight
-990202 dark red
+Linux Console
 Preferences->use transparent background
 
 //show prosseses
@@ -157,6 +140,9 @@ fi
 ------------------------
 
 GEDIT:
+
+yandex-disk gedit-themes
+sudo apt install gedit-plugins
 
 themes:
 https://github.com/gmate/gmate/blob/master/styles/Django.xml
@@ -277,3 +263,24 @@ DarkReader
 uBlock Origin
 Disable html5 autoplay (reloaded)
 Google Translate
+
+------------------------
+
+BRAVE:
+
+INSTALL:
+
+UNINSTALL:
+
+sudo apt remove brave-browser
+sudo apt purge brave-browser
+rm -rf ~/.config/BraveSoftware
+rm -rf ~/.cache/BraveSoftware
+
+------------------------
+
+YANDEX-DISK-FOR-CONSOLE:
+
+echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
+
+yandex-disk setup
