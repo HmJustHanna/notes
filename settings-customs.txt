@@ -141,8 +141,19 @@ fi
 
 GEDIT:
 
+HOTKEYS:
+Alt-O open quick window
+Ctrl-I go to line
+Alt-up(down)
+Alt left(right)
 yandex-disk gedit-themes
 sudo apt install gedit-plugins
+
+autoclose brackets
+word complete frame
+find in file
+snippets
+
 
 themes:
 https://github.com/gmate/gmate/blob/master/styles/Django.xml
@@ -284,3 +295,9 @@ YANDEX-DISK-FOR-CONSOLE:
 echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
 
 yandex-disk setup
+//start/stop demon
+yandex-disk start
+yandex-disk stop
+
+
+

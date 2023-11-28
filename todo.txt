@@ -1,17 +1,38 @@
-TRY!!!shellSort:
 
-void shell_sort(int *array, int size)
-{
-    for (int s = size / 2; s > 0; s /= 2) {
-        for (int i = s; i < size; ++i) {
-            for (int j = i - s; j >= 0 && array[j] > array[j + s]; j -= s) {
-                int temp = array[j];
-                array[j] = array[j + s];
-                array[j + s] = temp;
-            }
-        }
-    }
-}
+
+------------------------------------------------------------------------------
+PROGA					|	ALG-THEORY				|	CIMP-SCI
+						|							|
+code:		reports:	|	code:		reports:	|	reports:
+						|							|
+lab3  v 	lab3  v 	|	lab1  v		lab1  -		|	lab3 (word)
+lab4  v 	lab4  v 	|	lab2  v 	lab2  -		|		lab3.1 -
+lab5  v 	lab5  v 	|	lab3  v 	lab3  -		|		lab3.2 -
+lab6  v 	lab6  - 	|	lab4  v		lab4  -		|		lab3.3 -
+lab7  -		lab7  -		|							|
+lab8  v  	lab8  -		|							|	lab4 (power-point)			
+lab9  - 	lab9  -		|							|		lab4.1 -
+lab10 -					|							|		lab4.1 -		
+lab11 -					|							|		lab4.3 -		
+						|							|	lab5 (excel)
+						|							|		lab5.1 -
+						|							|		lab5.2 -
+						|							|		lab5.3 -
+						|							|
+						|							|	lab6 (access)
+						|							|		lab6.1 -
+						|							|		lab6.2 -
+						|							|		lab6.3 -
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
 
 program on c:
 count:
@@ -19,8 +40,10 @@ count:
 -words
 -lines
 
-mono is ...
-
 настройка vim
 tab or spaces ??? micro editor micro 1tbs-style.txt !
 https://www.jwz.org/doc/tabs-vs-spaces.html
+
+
+
+

@@ -1,31 +1,6 @@
-C-CPP:
+--------------------------------
 
-...
-
---------------------
-
-GIT:
-
-commit:
-
--what and for what?
--consistency with words:
-add fix start done update
-
-git commit -m "add: func1.c (for sort) -> settings-customs"	
-
---------------------
-
-LINUX:
-
-...
-
---------------------
-
-BASH:
-
-ls *.txt
-rm !$
+BASH
 
 alias rm=rm -i
 
@@ -33,3 +8,12 @@ see sed and awk commands
 
 curl -O https://disk.yandex.com/client/disk/...
 curl -o newfilename.txt https://disk.yandex.com/client/disk/...
+
+rm -v !("filename1"|"filename2") 
+rm -i !(*.zip)
+
+--------------------------------
+
+C#
+
+Console.WriteLine($"max element is " + string.Format("{0:f3}", max));
