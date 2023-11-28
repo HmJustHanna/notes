@@ -17,3 +17,27 @@ rm -i !(*.zip)
 C#
 
 Console.WriteLine($"max element is " + string.Format("{0:f3}", max));
+
+try {
+// Блок кода, проверяемый на наличие ошибок.
+}
+
+catch (ExcepType1 exOb) {
+// Обработчик исключения типа ExcepType1.
+}
+catch (ExcepType2 exOb) {
+// Обработчик исключения типа ExcepType2.
+}
+
+
+--------------------------------
+
+GIT
+
+git commit --amend -m "New commit message"
+
+--------------------------------
+
+EVINCE
+
+https://askubuntu.com/questions/191579/how-to-change-pdf-background-color-in-evince

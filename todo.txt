@@ -8,7 +8,7 @@ code:		reports:	|	code:		reports:	|	reports:
 lab3  v 	lab3  v 	|	lab1  v		lab1  -		|	lab3 (word)
 lab4  v 	lab4  v 	|	lab2  v 	lab2  -		|		lab3.1 -
 lab5  v 	lab5  v 	|	lab3  v 	lab3  -		|		lab3.2 -
-lab6  v 	lab6  - 	|	lab4  v		lab4  -		|		lab3.3 -
+lab6  v 	lab6  - 	|	lab4  -		lab4  -		|		lab3.3 -
 lab7  -		lab7  -		|							|
 lab8  v  	lab8  -		|							|	lab4 (power-point)			
 lab9  - 	lab9  -		|							|		lab4.1 -
