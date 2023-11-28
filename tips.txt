@@ -9,6 +9,7 @@ see sed and awk commands
 curl -O https://disk.yandex.com/client/disk/...
 curl -o newfilename.txt https://disk.yandex.com/client/disk/...
 
+does not work ?:
 rm -v !("filename1"|"filename2") 
 rm -i !(*.zip)
 
@@ -41,3 +42,9 @@ git commit --amend -m "New commit message"
 EVINCE
 
 https://askubuntu.com/questions/191579/how-to-change-pdf-background-color-in-evince
+
+--------------------------------
+
+BRITISH-ENGLISH
+
+https://www.narakeet.com/app/text-to-audio/?projectId=6cfb96cb-2ac9-4e87-bdba-82b062ea9e89
