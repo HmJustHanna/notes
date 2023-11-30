@@ -48,3 +48,10 @@ https://askubuntu.com/questions/191579/how-to-change-pdf-background-color-in-evi
 BRITISH-ENGLISH
 
 https://www.narakeet.com/app/text-to-audio/?projectId=6cfb96cb-2ac9-4e87-bdba-82b062ea9e89
+--------------------------------
+
+audacoious
+gparted
+evolution
+
+
