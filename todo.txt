@@ -6,21 +6,21 @@ PROGA					|	ALG-THEORY				|	CIMP-SCI
 code:		reports:	|	code:		reports:	|	reports:
 						|							|
 lab3  v 	lab3  v 	|	lab1  v		lab1  v		|	lab3 (word)
-lab4  v 	lab4  v 	|	lab2  v 	lab2  -		|		...
+lab4  v 	lab4  v 	|	lab2  v 	lab2  v		|		...
 lab5  v 	lab5  v 	|	lab3  v 	lab3  -		|		...
-lab6  v 	lab6  - 	|	lab4  -		lab4  -		|		lab3.3 -
+lab6  v 	lab6  ... 	|	lab4  -		lab4  -		|		lab3.3 -
 lab7  -		lab7  -		|							|
 lab8  v  	lab8  -		|							|	lab4 (power-point)			
-lab9  - 	lab9  -		|							|		lab4.1 v ?
-lab10 -					|							|		lab4.2 v > (y)		
-lab11 -					|							|		lab4.3 - (pc/f)
-															lab4.4 - (paper)
+lab9  v 	     		|							|		lab4.1 v 
+lab10 v					|							|		lab4.2 v 
+lab11 -					|							|		lab4.3 v 
+															lab4.4 v 
 															lab4.5 - (paper)	
 						|							|	lab5 (excel)
 						|							|		lab5.1 v
-						|							|		lab5.2 v ?
-						|							|		lab5.3 ?
-															lab5.4 ?
+						|							|		lab5.2 v
+						|							|		lab5.3 -
+															lab5.4 -
 						|							|------------------------
 						|							|	lab6 (access)
 						|							|		lab6.1 -

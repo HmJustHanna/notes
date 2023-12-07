@@ -299,5 +299,31 @@ yandex-disk setup
 yandex-disk start
 yandex-disk stop
 
+------------------------
+
+MOC
+
+sudo apt install moc
+
+//run app
+mocp
+
+//configurate app
+cp /usr/share/doc/moc/examples/ /home/anna/.moc
+cd ~/.moc
+gzip -d config.example.gz
+cp config.example config
+
+------------------------
+
+PENCIL 2D
+
+download from official site
+chmod a+x pencil2d-linux-amd64-0.6.6.AppImage
+./AppImage
+restart computer (for full screen)
+
+
+
 
 

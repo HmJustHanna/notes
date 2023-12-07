@@ -1,5 +1,39 @@
 --------------------------------
 
+C#
+
+int[] numbers = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+
+int i = null; 	X
+int? i = null;  V
+
+
+Console.WriteLine($"max element is " + string.Format("{0:f3}", max));
+
+
+try {
+// Блок кода, проверяемый на наличие ошибок.
+}
+
+catch (ExcepType1 exOb) {
+	...
+}
+catch (ExcepType2 exOb) {
+	Console.WriteLine("exOb.Message");
+	Main();
+}
+
+
+
+//for integers
+Random r = new Random();
+int rInt = r.Next(0, 100);
+
+//for doubles
+int range = 100;
+double rDouble = r.NextDouble()* range;
+--------------------------------
+
 BASH
 
 alias rm=rm -i
@@ -12,24 +46,6 @@ curl -o newfilename.txt https://disk.yandex.com/client/disk/...
 does not work ?:
 rm -v !("filename1"|"filename2") 
 rm -i !(*.zip)
-
---------------------------------
-
-C#
-
-Console.WriteLine($"max element is " + string.Format("{0:f3}", max));
-
-try {
-// Блок кода, проверяемый на наличие ошибок.
-}
-
-catch (ExcepType1 exOb) {
-// Обработчик исключения типа ExcepType1.
-}
-catch (ExcepType2 exOb) {
-// Обработчик исключения типа ExcepType2.
-}
-
 
 --------------------------------
 
