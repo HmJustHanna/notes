@@ -1,52 +1,24 @@
+ПРОГРАММИРОВАНИЕ
+
+показать лаб 5	модифицированный for (-1) доп. задание 
+лаб 6, 8  отчет
+лаб 7-9-10 делать
+
+ТЕОРИЯ АЛГОРИТМОВ
+
+лаб 1-2-3 отчет + печать
+лаб 4 делать	| вторник, 2 4 пары
 
 
-------------------------------------------------------------------------------
-PROGA					|	ALG-THEORY				|	CIMP-SCI
-						|							|
-code:		reports:	|	code:		reports:	|	reports:
-						|							|
-lab3  v 	lab3  v 	|	lab1  v		lab1  v		|	lab3 (word)
-lab4  v 	lab4  v 	|	lab2  v 	lab2  v		|		...
-lab5  v 	lab5  v 	|	lab3  v 	lab3  -		|		...
-lab6  v 	lab6  ... 	|	lab4  -		lab4  -		|		lab3.3 -
-lab7  -		lab7  -		|							|
-lab8  v  	lab8  -		|							|	lab4 (power-point)			
-lab9  v 	     		|							|		lab4.1 v 
-lab10 v					|							|		lab4.2 v 
-lab11 -					|							|		lab4.3 v 
-															lab4.4 v 
-															lab4.5 - (paper)	
-						|							|	lab5 (excel)
-						|							|		lab5.1 v
-						|							|		lab5.2 v
-						|							|		lab5.3 -
-															lab5.4 -
-						|							|------------------------
-						|							|	lab6 (access)
-						|							|		lab6.1 -
-						|							|		lab6.2 -
-						|							|		lab6.3 -
--------------------------------------------------------------------------------
+ИНФОРМАТИКА
 
+презентация трех конфигураций
+3 конфигурации
+excel 2 делать
+access 3 видео + делать
 
+ИСТОРИЯ РОССИИ
+конспект тема ?
+ENGLISH
 
-
-
-
-
-
-
-
-program on c:
-count:
--symbols
--words
--lines
-
-настройка vim
-tab or spaces ??? micro editor micro 1tbs-style.txt !
-https://www.jwz.org/doc/tabs-vs-spaces.html
-
-
-
-
+The Russian Federation

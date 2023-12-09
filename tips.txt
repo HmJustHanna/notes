@@ -47,6 +47,26 @@ does not work ?:
 rm -v !("filename1"|"filename2") 
 rm -i !(*.zip)
 
+find /home -name "*.jpg" 2>/dev/null
+find . -type d
+find . -empty
+find . -size +1G (... > 1Gbyte)
+find . -size -2k (... < 2kbyte)
+find . -cmin -60 (созданы в течение последнего часа)
+find . -atime +30 (файлы, к которым не обращались последние 30 дней)
+find /home -user anna 2>/dev/null
+find /home -perm 777
+find /home \( -user ivan -or -user anna \)  -and  -size +1G  2>/dev/null
+find . -empty -delete = find . -empty -exec rm {} \;
+find . -name "*.jpg" -exec cp {} /home/anna/Pictures/basckups \;
+
+f – простые файлы;
+d – каталоги;
+b – блочные устройства (dev);
+l – символические ссылки;
+c – символьные устройства (dev);
+p – именованные каналы;
+s – сокеты;
 --------------------------------
 
 GIT
