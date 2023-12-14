@@ -1,0 +1,14 @@
+good docs
+bash scrits
+firefox bookmarks
+tg cli
+unzip install doc
+
+
+
+
+sudo apt install network-manager
+nmcli-connection-editor
+nmcli connection up <SSID>
+
+

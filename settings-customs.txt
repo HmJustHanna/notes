@@ -2,8 +2,22 @@
 
 MY-SYSTEM-UBUNTU-18.04:
 
-check internet conncetion
-sudo apt get update && sudo apt get upgrade
+sudo apt-get install bcmwl-kernel-source
+sudo apt install network-manager
+nmtui
+
+sudo lshw -C network
+*-network DISABLED
+logical name: enp0s20u2
+sudo ip link set enp0s20u2 up
+sudo lshw -C network
+*-network
+
+hotspot 
+service network-manager restart
+nmtui
+input password (but you cant see it!)
+
 sudo apt install gnome-tweaks
 sudo apt install git
 sudo apt install vim
@@ -352,7 +366,7 @@ PLUGIN MANAGER
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-.vimrc:
+.VIMRC:
 
 call plug#begin()
 
@@ -366,10 +380,41 @@ call plug#end()
 :PlugUpgrade //plug manager
 //remove plugin
 remove the line and :PlugClean
-
 -------------------------------------
+
+SUDO
+
+sudo passwd root
+sudo -i or su -
+sudo passwd -dl root //disable login
+exit
+
+sudo -i (This command will give you superuser access with root’s environment variables.)
+-------------------------------------
+
+I3WM
+
+
+startx
+check rights for this file
 sudo chown -R anna:anna /home/anna
-------------------------------------
+if first start was with sudo -> rm .Xauthority
+-------------------------------------
+sudo apt-get install -y xbacklight
+
+1)check your /sys/class/backlight folder. If you can see an intel_backlight folder -> step2
+2)creating a /etc/X11/xorg.conf file:
+Section "Device"
+    Identifier  "Intel Graphics" 
+    Driver      "intel"
+    Option      "Backlight"  "intel_backlight"
+EndSection
+
+3)logout and login again
+-------------------------------------
+https://github.com/altdesktop/playerctl/releases
+sudo dpkg -i playerctl...
+-------------------------------------
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
@@ -388,53 +433,55 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
--------------------------------------
+------------------------------------
+
+CLIPIT
+-
 sudo apt install clipit
 ctrl c      copy
 ctrl alt h  to buffer
 ctrl alt v  paste
 ------------------------------------
-https://github.com/altdesktop/playerctl/releases
-sudo dpkg -i playerctl...
--------------------------------
-startx
-check rights for this file
-if first start was with sudo -> rm .Xauthority
-------------------------------
-sudo apt-get install -y xbacklight
 
-1)check your /sys/class/backlight folder. If you can see an intel_backlight folder -> step2
-2)creating a /etc/X11/xorg.conf file:
-Section "Device"
-    Identifier  "Intel Graphics" 
-    Driver      "intel"
-    Option      "Backlight"  "intel_backlight"
-EndSection
+FEH
 
-3)logout and login again
--------
-sudo passwd root
-sudo -i or su -
-sudo passwd -dl root //disable login
-exit
-
-sudo -i (This command will give you superuser access with root’s environment variables.)
------------
 download wallpaper ...
 xrandr | grep '*' | awk '{ print $1 }'
 sudo apt install feh
 exec-always feh --bg-scale
---------------------
+
+-------------------------------------
+
+FONTS
+
+mkdir ~/.fonts
+git clone https://github.com/FortAwesome/Font-Awesome/releases/tag/6.5.16/
+fontawesome-free-6.5.1-desktop.zip
+mv *.otf ~/.fonts
+
+https://fontawesome.com/v4/cheatsheet/	
+search font awesome cheatsheet and copy paste
+-------------------------------------
+TERMITE and STYLE
+
+ROFI
+
+sudo apt install rofi
+/usr/share/rofi/themes
+
+touch config.rasi
+------------------------------------
+sudo apt-get install gpick-
+-------------------------------------
+
 MOUNT
 
 sudo add-apt-repository ppa:relan/exfat
 sudo apt-get update
 sudo apt-get install fuse fuse-exfat exfat-utils
 
-
 sudo mkdir /media/exfat
 sudo mount -t exfat /dev/sdb1 /media/exfat
-
 
 
 sudo mkdir /media/mountname
@@ -443,3 +490,39 @@ sudo mount -t ntfs-3g /dev/sdb1 /media/mountname
 sudo mount -t vfat /dev/sdb1 /media/mountname -o [securityoption]
 sudo umount /dev/sdb1 
 sudo umount /media/mountname
+
+localectl list-x11-keymap-variants
+localectl list-x11-keymap-optians
+localectl list-x11-keymap-layouts
+localectl list-x11-keymap-models
+
+setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+
+more https://igancev.ru/2021-10-31-i3wm-keyboard-layout
+
+sudo /etc/init.d/network-manager start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
