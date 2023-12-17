@@ -4,6 +4,7 @@ MY-SYSTEM-UBUNTU-18.04:
 
 sudo apt-get install bcmwl-kernel-source
 sudo apt install network-manager
+sudo /etc/init.d/network-manager start
 nmtui
 
 sudo lshw -C network
@@ -37,6 +38,7 @@ sudo apt-get install gnome-shell-extensions
 
 //error no wifi adapter found
 sudo apt-get install bcmwl-kernel-source 
+
 ------------------------
 
 BACKUPS:
@@ -45,11 +47,14 @@ sudo add-apt-repository ppa:teejee2008/ppa
 sudo apt-get update
 sudo apt-get install timeshift -y
 
+sudo apt install deja-dup
+start without sudo (from terminal) because of error 
 ------------------------
+
 FILESYSTEMS:
 
 sudo apt-get install exfat-fuse exfat-utils
-
+sudo mount -t exfat /dev/sdc1 /media/exfat
 
 ------------------------
 
@@ -108,12 +113,7 @@ gh repo edit
 
 ------------------------
 
-TERMINAL:
-
-fonts:
-
-Gohu.zip->.fonts
-Preferences->Gohu,14
+GNOME TERMINAL UBUNTU 18.04
 
 theme:
 
@@ -121,16 +121,15 @@ sudo apt-get install dconf-cli uuid-runtime
 Interactive mode:
 bash -c "$(wget -qO- https://git.io/vQgMr)"
 
+TERMITE
+
+cd $HOME
+git clone https://github.com/adi1090x/termite-style
+cd termite-style
+./install
+
 colors:
-
-1EC86B green
-171A1B dark gray
-Linux Console
-Preferences->use transparent background
-
-//show prosseses
-ps
-ps vg
+39 - gray
 
 ------------------------
 
@@ -362,7 +361,7 @@ sudo ln -s /usr/local/bin/vim /usr/bin/vim
 
 
 
-PLUGIN MANAGER
+VIM-PLUG
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -380,6 +379,7 @@ call plug#end()
 :PlugUpgrade //plug manager
 //remove plugin
 remove the line and :PlugClean
+
 -------------------------------------
 
 SUDO
@@ -415,40 +415,22 @@ EndSection
 https://github.com/altdesktop/playerctl/releases
 sudo dpkg -i playerctl...
 -------------------------------------
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+KEYBOARD
 
-# Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+localectl list-x11-keymap-variants
+localectl list-x11-keymap-options
 
-# Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
 
-------------------------------------
+setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 
-CLIPIT
--
-sudo apt install clipit
-ctrl c      copy
-ctrl alt h  to buffer
-ctrl alt v  paste
+more https://igancev.ru/2021-10-31-i3wm-keyboard-layout
+
 ------------------------------------
 
 FEH
 
-download wallpaper ...
 xrandr | grep '*' | awk '{ print $1 }'
-sudo apt install feh
-exec-always feh --bg-scale
 
 -------------------------------------
 
@@ -462,17 +444,13 @@ mv *.otf ~/.fonts
 https://fontawesome.com/v4/cheatsheet/	
 search font awesome cheatsheet and copy paste
 -------------------------------------
-TERMITE and STYLE
 
 ROFI
 
-sudo apt install rofi
 /usr/share/rofi/themes
-
 touch config.rasi
+
 ------------------------------------
-sudo apt-get install gpick-
--------------------------------------
 
 MOUNT
 
@@ -483,27 +461,15 @@ sudo apt-get install fuse fuse-exfat exfat-utils
 sudo mkdir /media/exfat
 sudo mount -t exfat /dev/sdb1 /media/exfat
 
-
 sudo mkdir /media/mountname
+
+SDB INFO
+
 sudo fdisk -l
 sudo mount -t ntfs-3g /dev/sdb1 /media/mountname
 sudo mount -t vfat /dev/sdb1 /media/mountname -o [securityoption]
 sudo umount /dev/sdb1 
 sudo umount /media/mountname
-
-localectl list-x11-keymap-variants
-localectl list-x11-keymap-optians
-localectl list-x11-keymap-layouts
-localectl list-x11-keymap-models
-
-setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
-
-more https://igancev.ru/2021-10-31-i3wm-keyboard-layout
-
-sudo /etc/init.d/network-manager start
-
-
-
 
 
 
