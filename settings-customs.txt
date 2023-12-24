@@ -471,15 +471,42 @@ sudo mount -t vfat /dev/sdb1 /media/mountname -o [securityoption]
 sudo umount /dev/sdb1 
 sudo umount /media/mountname
 
+PALEMOON
+
+echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_18.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser.list
+
+wget -O - https://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_18.04/Release.key | sudo apt-key add -
+
+sudo apt update
+
+sudo apt install palemoon
+
+-----------------------------
+
+fission.autostart true -> false
+gfx.webrender.all true -> false
+hardware aceleration uncheck -> check
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+
+sudo add-apt-repository ppa:oibaf/graphics-drivers
+sudo apt update
+sudo apt upgrade
 
 
 
+sudo add-apt-repository ppa:mozillateam/ppa
 
+echo '
+Package: *
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 1001
+' | sudo tee /etc/apt/preferences.d/mozilla-firefox
 
+echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
 
-
-
-
+sudo apt install firefox
 
 
 
