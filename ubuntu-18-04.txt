@@ -1,7 +1,33 @@
-------------------------
 
-MY-SYSTEM-UBUNTU-18.04:
 
+
+██╗░░░██╗██████╗░██╗░░░██╗███╗░░██╗████████╗██╗░░░██╗  ░░███╗░░░█████╗░░░░░█████╗░░░██╗██╗
+██║░░░██║██╔══██╗██║░░░██║████╗░██║╚══██╔══╝██║░░░██║  ░████║░░██╔══██╗░░░██╔══██╗░██╔╝██║
+██║░░░██║██████╦╝██║░░░██║██╔██╗██║░░░██║░░░██║░░░██║  ██╔██║░░╚█████╔╝░░░██║░░██║██╔╝░██║
+██║░░░██║██╔══██╗██║░░░██║██║╚████║░░░██║░░░██║░░░██║  ╚═╝██║░░██╔══██╗░░░██║░░██║███████║
+╚██████╔╝██████╦╝╚██████╔╝██║░╚███║░░░██║░░░╚██████╔╝  ███████╗╚█████╔╝██╗╚█████╔╝╚════██║
+░╚═════╝░╚═════╝░░╚═════╝░╚═╝░░╚══╝░░░╚═╝░░░░╚═════╝░  ╚══════╝░╚════╝░╚═╝░╚════╝░░░░░░╚═╝
+
+
+
+sudo apt install gnome-tweaks
+sudo apt install git
+sudo apt install vim
+sudo apt install build-essential
+
+sudo apt install curl
+sudo apt install tree
+sudo apt install neofetch
+
+//error unable to download updates from extensions.gnome.org
+
+sudo add-apt-repository ppa:gnome-shell-extensions/ppa
+sudo apt-get update
+sudo apt-get install gnome-shell-extensions
+
+//error no wifi adapter found
+
+sudo apt-get install bcmwl-kernel-source 
 sudo apt-get install bcmwl-kernel-source
 sudo apt install network-manager
 sudo /etc/init.d/network-manager start
@@ -19,27 +45,7 @@ service network-manager restart
 nmtui
 input password (but you cant see it!)
 
-sudo apt install gnome-tweaks
-sudo apt install git
-sudo apt install vim
-sudo apt install build-essential
-
-additionally:
-
-sudo apt install curl
-sudo apt install tree
-sudo apt install neofetch
-
-//error unable to download updates from extensions.gnome.org
-
-sudo add-apt-repository ppa:gnome-shell-extensions/ppa
-sudo apt-get update
-sudo apt-get install gnome-shell-extensions
-
-//error no wifi adapter found
-sudo apt-get install bcmwl-kernel-source 
-
-------------------------
+----------------------------------------------
 
 BACKUPS:
 
@@ -49,16 +55,54 @@ sudo apt-get install timeshift -y
 
 sudo apt install deja-dup
 start without sudo (from terminal) because of error 
-------------------------
+
+----------------------------------------------
+
+MOUNT
+
+sudo add-apt-repository ppa:relan/exfat
+sudo apt-get update
+sudo apt-get install fuse fuse-exfat exfat-utils
+
+sudo mkdir /media/exfat
+sudo mount -t exfat /dev/sdb1 /media/exfat
+
+sudo mkdir /media/mountname
+
+SDB INFO
+
+sudo fdisk -l
+sudo mount -t ntfs-3g /dev/sdb1 /media/mountname
+sudo mount -t vfat /dev/sdb1 /media/mountname -o [securityoption]
+sudo umount /dev/sdb1 
+sudo umount /media/mountname
+
+----------------------------------------------
 
 FILESYSTEMS:
 
 sudo apt-get install exfat-fuse exfat-utils
 sudo mount -t exfat /dev/sdc1 /media/exfat
 
-------------------------
+----------------------------------------------
 
-GITHUB
+SUDO
+
+sudo passwd root
+sudo -i or su -
+sudo passwd -dl root //disable login
+exit
+
+sudo -i (This command will give you superuser access with root’s environment variables.)
+-
+----------------------------------------------
+
+
+█▀▀▀ ░▀░ ▀▀█▀▀ █░░█ █░░█ █▀▀▄ 
+█░▀█ ▀█▀ ░░█░░ █▀▀█ █░░█ █▀▀▄ 
+▀▀▀▀ ▀▀▀ ░░▀░░ ▀░░▀ ░▀▀▀ ▀▀▀░
+
+
 
 //for beauty tabs in github
 //project should contain .editorconfig :
@@ -67,7 +111,6 @@ GITHUB
 indent_style = tab
 indent_size = 4
 
-------------------------
 
 GIT:
 
@@ -83,8 +126,6 @@ git config --global alias.last 'log -1 HEAD'
 
 maybe you want to run an external command, rather than a Git subcommand. In that case, you start the command with a ! character.
 
-//install gitCLI
-
 git init
 git status
 git add
@@ -98,9 +139,15 @@ git remote add origin URL
 git remote -v
 git push -u origin main
 
+----------------------------------------------
+
+GITCLIENT:
+
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
 sudo apt update
@@ -111,15 +158,21 @@ gh repo create
 gh repo list
 gh repo edit
 
-------------------------
 
-GNOME TERMINAL UBUNTU 18.04
 
-theme:
+▀▀█▀▀ █▀▀ █▀▀█ █▀▄▀█ ░▀░ █▀▀▄ █▀▀█ █░░ 
+░░█░░ █▀▀ █▄▄▀ █░▀░█ ▀█▀ █░░█ █▄▄█ █░░ 
+░░▀░░ ▀▀▀ ▀░▀▀ ▀░░░▀ ▀▀▀ ▀░░▀ ▀░░▀ ▀▀▀
+
+
+
+GNOME-TERMINAL:
 
 sudo apt-get install dconf-cli uuid-runtime
 Interactive mode:
 bash -c "$(wget -qO- https://git.io/vQgMr)"
+
+----------------------------------------------
 
 TERMITE
 
@@ -128,33 +181,16 @@ git clone https://github.com/adi1090x/termite-style
 cd termite-style
 ./install
 
-colors:
-39 - gray
 
-------------------------
 
-.BASHRC:
-
-alias c='clear'
-alias runcs='runcs.sh'
-
-export PS1="\u \t \W > "
-export PATH=/home/anna/Documents/bash-scripts
-------------------------
-
-SCRIPTS:
-
-#!/bin/bash
-
-if(csc "$1.cs");then
-	mono "$1.exe"
-fi
-
-------------------------
+█▀▀ █▀▀▄ ░▀░ ▀▀█▀▀ █▀▀█ █▀▀█ █▀▀ 
+█▀▀ █░░█ ▀█▀ ░░█░░ █░░█ █▄▄▀ ▀▀█ 
+▀▀▀ ▀▀▀░ ▀▀▀ ░░▀░░ ▀▀▀▀ ▀░▀▀ ▀▀▀
 
 GEDIT:
 
 HOTKEYS:
+
 Alt-O open quick window
 Ctrl-I go to line
 Alt-up(down)
@@ -168,11 +204,53 @@ find in file
 snippets
 
 
-themes:
+THEMES:
+
 https://github.com/gmate/gmate/blob/master/styles/Django.xml
 mv Django.xml ~/.local/share/gedit/styles
 
-------------------------
+----------------------------------------------
+
+VIM
+
+git clone https://github.com/vim/vim
+sudo apt install python3 libpython3-dev
+find smth like this ->  /usr/lib/python3.6/config-3.6m-x86_64-linux-gnu
+cd ~/vim/src
+./configure --with-features=huge \
+            --enable-multibyte \
+            --enable-python3interp=yes \
+            --enable-luainterp=yes \
+            --with-python3-config-dir=/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu
+            --prefix=/usr/local/
+
+
+            --enable-rubyinterp=yes \
+            --enable-perlinterp=yes \
+
+sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 1
+sudo ln -s /usr/local/bin/vim /usr/bin/vim
+
+VIM-PLUG
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+.VIMRC:
+
+call plug#begin()
+
+Plug 'preservim/nerdtree'
+Plug 'whatyouhide/vim-gotham'
+
+call plug#end()
+
+:PlugInstall // install plugs
+:PlugUpdate // all plugs
+:PlugUpgrade //plug manager
+//remove plugin
+remove the line and :PlugClean
+
+----------------------------------------------
 
 MICRO:
 
@@ -190,46 +268,8 @@ plugin install ...
 //about custom highlighting and theme
 
 https://github.com/zyedidia/micro/blob/master/runtime/help/colors.md
-------------------------
 
-MONO:
-
-sudo apt update
-sudo apt install dirmngr gnupg apt-transport-https ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo sh -c 'echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" > /etc/apt/sources.list.d/mono-official-stable.list'
-
-sudo apt update
-sudo apt install mono-complete
-
-
-mono --version
-csc hello.cs
-mono hello.exe
-
--------------------
-
-NODEJS
-
-sudo apt-get update
-
-sudo apt-get install -y ca-certificates curl gnupg
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-
-//VERSION 16 IS LATEST FOR MY UBUNTU 18 BIONIC
-
-NODE_MAJOR=16
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-sudo apt-get update
-sudo apt-get install nodejs -y
-
-//UNINSTALL
-
-sudo apt-get purge nodejs &&\
-rm -r /etc/apt/sources.list.d/nodesource.list &&\rm -r /etc/apt/keyrings/nodesource.gpg
-
----------------------
+----------------------------------------------
 
 SUBLIMETEXT
 
@@ -279,16 +319,79 @@ tools->build system->new build system
 	"cmd": ["node", "$file"],
 	"selector": "source.js"
 }
-------------------------
+
+----------------------------------------------
+
+MONO:
+
+sudo apt update
+sudo apt install dirmngr gnupg apt-transport-https ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo sh -c 'echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" > /etc/apt/sources.list.d/mono-official-stable.list'
+
+sudo apt update
+sudo apt install mono-complete
+
+mono --version
+csc hello.cs
+mono hello.exe
+
+----------------------------------------------
+
+
+
+█▀▀▄ █▀▀█ █▀▀█ █░░░█ █▀▀ █▀▀ █▀▀█ █▀▀ 
+█▀▀▄ █▄▄▀ █░░█ █▄█▄█ ▀▀█ █▀▀ █▄▄▀ ▀▀█ 
+▀▀▀░ ▀░▀▀ ▀▀▀▀ ░▀░▀░ ▀▀▀ ▀▀▀ ▀░▀▀ ▀▀▀
+
+
+
+PALEMOON
+
+echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_18.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser.list
+
+wget -O - https://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_18.04/Release.key | sudo apt-key add -
+
+sudo apt update
+sudo apt install palemoon
+
+----------------------------------------------
+
+FIREFOX:
+
+sudo add-apt-repository ppa:mozillateam/ppa
+
+echo '
+Package: *
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 1001
+' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+
+echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
+
+sudo apt install firefox
+
+fission.autostart true -> false
+gfx.webrender.all true -> false
+hardware aceleration uncheck -> check
+
+----------------------------------------------
 
 CHROME
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+
+sudo add-apt-repository ppa:oibaf/graphics-drivers
+sudo apt update
+sudo apt upgrade
 
 DarkReader
 uBlock Origin
 Disable html5 autoplay (reloaded)
 Google Translate
 
-------------------------
+----------------------------------------------
 
 BRAVE:
 
@@ -301,18 +404,15 @@ sudo apt purge brave-browser
 rm -rf ~/.config/BraveSoftware
 rm -rf ~/.cache/BraveSoftware
 
-------------------------
+----------------------------------------------
 
-YANDEX-DISK-FOR-CONSOLE:
 
-echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
 
-yandex-disk setup
-//start/stop demon
-yandex-disk start
-yandex-disk stop
+█▀▄▀█ █░░█ █▀▀ ░▀░ █▀▀ 
+█░▀░█ █░░█ ▀▀█ ▀█▀ █░░ 
+▀░░░▀ ░▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀
 
-------------------------
+
 
 MOC
 
@@ -327,7 +427,12 @@ cd ~/.moc
 gzip -d config.example.gz
 cp config.example config
 
-------------------------
+----------------------------------------------
+
+
+█▀▀█ ▀▀█▀▀ █░░█ █▀▀ █▀▀█ █▀▀ 
+█░░█ ░░█░░ █▀▀█ █▀▀ █▄▄▀ ▀▀█ 
+▀▀▀▀ ░░▀░░ ▀░░▀ ▀▀▀ ▀░▀▀ ▀▀▀
 
 PENCIL 2D
 
@@ -336,186 +441,17 @@ chmod a+x pencil2d-linux-amd64-0.6.6.AppImage
 ./AppImage
 restart computer (for full screen)
 
-------------------------
+----------------------------------------------
 
-VIM
+YANDEX-DISK-FOR-CONSOLE:
 
-git clone https://github.com/vim/vim
-sudo apt install python3 libpython3-dev
-find smth like this ->  /usr/lib/python3.6/config-3.6m-x86_64-linux-gnu
-cd ~/vim/src
-./configure --with-features=huge \
-            --enable-multibyte \
-            --enable-python3interp=yes \
-            --enable-luainterp=yes \
-            --with-python3-config-dir=/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu
-            --prefix=/usr/local/
+echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list > /dev/null && wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - && sudo apt-get update && sudo apt-get install -y yandex-disk
 
+yandex-disk setup
+//start/stop demon
+yandex-disk start
+yandex-disk stop
 
-            --enable-rubyinterp=yes \
-            --enable-perlinterp=yes \
-
-sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 1
-sudo ln -s /usr/local/bin/vim /usr/bin/vim
-
-
-
-
-VIM-PLUG
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-.VIMRC:
-
-call plug#begin()
-
-Plug 'preservim/nerdtree'
-Plug 'whatyouhide/vim-gotham'
-
-call plug#end()
-
-:PlugInstall // install plugs
-:PlugUpdate // all plugs
-:PlugUpgrade //plug manager
-//remove plugin
-remove the line and :PlugClean
-
--------------------------------------
-
-SUDO
-
-sudo passwd root
-sudo -i or su -
-sudo passwd -dl root //disable login
-exit
-
-sudo -i (This command will give you superuser access with root’s environment variables.)
--------------------------------------
-
-I3WM
-
-
-startx
-check rights for this file
-sudo chown -R anna:anna /home/anna
-if first start was with sudo -> rm .Xauthority
--------------------------------------
-sudo apt-get install -y xbacklight
-
-1)check your /sys/class/backlight folder. If you can see an intel_backlight folder -> step2
-2)creating a /etc/X11/xorg.conf file:
-Section "Device"
-    Identifier  "Intel Graphics" 
-    Driver      "intel"
-    Option      "Backlight"  "intel_backlight"
-EndSection
-
-3)logout and login again
--------------------------------------
-https://github.com/altdesktop/playerctl/releases
-sudo dpkg -i playerctl...
--------------------------------------
-
-KEYBOARD
-
-localectl list-x11-keymap-variants
-localectl list-x11-keymap-options
-
-
-setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
-
-more https://igancev.ru/2021-10-31-i3wm-keyboard-layout
-
-------------------------------------
-
-FEH
-
-xrandr | grep '*' | awk '{ print $1 }'
-
--------------------------------------
-
-FONTS
-
-mkdir ~/.fonts
-git clone https://github.com/FortAwesome/Font-Awesome/releases/tag/6.5.16/
-fontawesome-free-6.5.1-desktop.zip
-mv *.otf ~/.fonts
-
-https://fontawesome.com/v4/cheatsheet/	
-search font awesome cheatsheet and copy paste
--------------------------------------
-
-ROFI
-
-/usr/share/rofi/themes
-touch config.rasi
-
-------------------------------------
-
-MOUNT
-
-sudo add-apt-repository ppa:relan/exfat
-sudo apt-get update
-sudo apt-get install fuse fuse-exfat exfat-utils
-
-sudo mkdir /media/exfat
-sudo mount -t exfat /dev/sdb1 /media/exfat
-
-sudo mkdir /media/mountname
-
-SDB INFO
-
-sudo fdisk -l
-sudo mount -t ntfs-3g /dev/sdb1 /media/mountname
-sudo mount -t vfat /dev/sdb1 /media/mountname -o [securityoption]
-sudo umount /dev/sdb1 
-sudo umount /media/mountname
-
-PALEMOON
-
-echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_18.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser.list
-
-wget -O - https://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_18.04/Release.key | sudo apt-key add -
-
-sudo apt update
-
-sudo apt install palemoon
-
------------------------------
-
-fission.autostart true -> false
-gfx.webrender.all true -> false
-hardware aceleration uncheck -> check
-
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
-
-sudo add-apt-repository ppa:oibaf/graphics-drivers
-sudo apt update
-sudo apt upgrade
-
-
-
-sudo add-apt-repository ppa:mozillateam/ppa
-
-echo '
-Package: *
-Pin: release o=LP-PPA-mozillateam
-Pin-Priority: 1001
-' | sudo tee /etc/apt/preferences.d/mozilla-firefox
-
-echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
-
-sudo apt install firefox
-
-
-
-
-
-
-
-
-
-
+----------------------------------------------
 
 
