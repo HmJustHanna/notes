@@ -1,24 +1,36 @@
-sudo apt inatall i3 i3status
 
-sudo apt install -y xbacklight
-sudo apt install clipit
-sudo apt install feh
-sudo apt install rofi
-sudo apt install gpick
-sudo apt install scrot
-sudo apt install eog
-sudo apt install zathura
-sudo apt install mupdf
-sudo apt install moc
-sudo apt install network-manager (for nmtui)
+
+
+██╗██████╗░░██╗░░░░░░░██╗███╗░░░███╗
+██║╚════██╗░██║░░██╗░░██║████╗░████║
+██║░█████╔╝░╚██╗████╗██╔╝██╔████╔██║
+██║░╚═══██╗░░████╔═████║░██║╚██╔╝██║
+██║██████╔╝░░╚██╔╝░╚██╔╝░██║░╚═╝░██║
+╚═╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░░░░░╚═╝
+
+
+==========PACKAGES INSTALLED==========
+
+
+MAIN           
+
+sudo apt inatall i3 i3status rofi network-manager xbacklight
+
+
+ADDITIONALLY 1  
+
+sudo apt inatall scrot eog zathura moc feh 
+
+
+ADDITIONALLY 2  
+
+sudo apt install compton snapd clipit gpick
 
 git clone https://github.com/soimort/translate-shell
 cd translate-shell/
 make
 sudo make install
 
-sudo apt install compton
-sudo apt install snapd
 sudo snap install telegram-desktop
 
 sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
@@ -29,9 +41,65 @@ cd i3lock-color
 
 
 
+=============CONFIGURATION============
+
+I3WM
+
+startx
+check rights for this file
+sudo chown -R anna:anna /home/anna
+if first start was with sudo -> rm .Xauthority
 
 
+ROFI
+
+/usr/share/rofi/themes
+touch config.rasi
 
 
+XBACKLIGHT
+
+1)check your /sys/class/backlight folder. If you can see an intel_backlight folder -> step2
+2)creating a /etc/X11/xorg.conf file:
+Section "Device"
+    Identifier  "Intel Graphics" 
+    Driver      "intel"
+    Option      "Backlight"  "intel_backlight"
+EndSection
+
+3)logout and login again
+
+
+KEYBOARD
+
+localectl list-x11-keymap-variants
+localectl list-x11-keymap-options
+
+
+setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+
+more https://igancev.ru/2021-10-31-i3wm-keyboard-layout
+
+
+FEH
+
+xrandr | grep '*' | awk '{ print $1 }'
+
+
+FONTS
+
+mkdir ~/.fonts
+git clone https://github.com/FortAwesome/Font-Awesome/releases/tag/6.5.16/
+fontawesome-free-6.5.1-desktop.zip
+mv *.otf ~/.fonts
+
+https://fontawesome.com/v4/cheatsheet/	
+search font awesome cheatsheet and copy paste
+
+
+???
+
+https://github.com/altdesktop/playerctl/releases
+sudo dpkg -i playerctl...
 
 
