@@ -81,27 +81,6 @@ localectl list-x11-keymap-options
 
 
 
-FEH
-
-
-
-xrandr | grep '*' | awk '{ print $1 }'
-
-
-
-FONTS
-
-
-
-mkdir ~/.fonts
-git clone https://github.com/FortAwesome/Font-Awesome/releases/tag/6.5.16/
-fontawesome-free-6.5.1-desktop.zip
-mv *.otf ~/.fonts
-
-https://fontawesome.com/v4/cheatsheet/	
-search font awesome cheatsheet and copy paste
-
-
 
 FIREFOX 
 
@@ -136,3 +115,41 @@ apt-cache search firefox-l10n.
 sudo apt install firefox-l10n-fr
 
 
+
+GH (GITHUB CLI)
+
+
+
+log in whith browser first
+or without browser and via auth token
+
+type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+
+gh auth login
+
+
+
+FEH
+
+
+
+xrandr | grep '*' | awk '{ print $1 }'
+
+
+
+FONTS
+
+
+
+mkdir ~/.fonts
+git clone https://github.com/FortAwesome/Font-Awesome/releases/tag/6.5.16/
+fontawesome-free-6.5.1-desktop.zip
+mv *.otf ~/.fonts
+
+https://fontawesome.com/v4/cheatsheet/	
+search font awesome cheatsheet and copy paste
