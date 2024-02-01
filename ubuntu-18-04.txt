@@ -27,7 +27,6 @@ sudo apt-get install gnome-shell-extensions
 
 //error no wifi adapter found
 
-sudo apt-get install bcmwl-kernel-source 
 sudo apt-get install bcmwl-kernel-source
 sudo apt install network-manager
 sudo /etc/init.d/network-manager start
