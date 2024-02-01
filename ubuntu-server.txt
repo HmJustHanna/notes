@@ -1,14 +1,4 @@
-
-
-
-██╗██████╗░░██╗░░░░░░░██╗███╗░░░███╗
-██║╚════██╗░██║░░██╗░░██║████╗░████║
-██║░█████╔╝░╚██╗████╗██╔╝██╔████╔██║
-██║░╚═══██╗░░████╔═████║░██║╚██╔╝██║
-██║██████╔╝░░╚██╔╝░╚██╔╝░██║░╚═╝░██║
-╚═╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░░░░░╚═╝
-
-FOR UBUNTU-SERVER 22.04
+UBUNTU-SERVER 22.04
 
 MAIN           
 
@@ -44,8 +34,10 @@ network:
 
 ADDITIONALLY
 
-sudo apt install i3 xbacklight build-essentials
-sudo apt inatall feh zathura scrot clipit moc 
+sudo apt install i3 xbacklight pulseaudio
+sudo apt inatall build-essentials feh zathura scrot clipit moc lxappereance
+
+git clone https://HmJustHanna/i3wm...
 
 git clone https://github.com/soimort/translate-shell
 cd translate-shell/
