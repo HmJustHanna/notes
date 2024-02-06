@@ -1,0 +1,6 @@
+ubuntu server 22.04
+sudo apt update && sudo apt upgrade
+
+git clone https://git.suckless.org/dwm
+git clone https://git.suckless.org/dmenu
+git clone https://git.suckless.org/st
