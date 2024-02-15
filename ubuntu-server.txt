@@ -34,10 +34,19 @@ network:
 
 ADDITIONALLY
 
-sudo apt install i3 xbacklight pulseaudio
-sudo apt inatall build-essentials feh zathura scrot clipit moc lxappereance
-sudo apt install fbreader
-sudo apt install mypaint
+v sudo apt install i3 xbacklight pulseaudio
+v sudo apt inatall build-essentials feh scrot
+
+sudo apt install
+
+zathura
+clipit
+moc
+lxappereance
+
+mypaint
+drawing
+fbreader
 
 git clone https://HmJustHanna/i3wm...
 
@@ -150,13 +159,3 @@ search font awesome cheatsheet and copy paste
 
 
 
-WARNINGS!
-
-while removing pinta and autoremove
-dpkg: warning: while removing libgdiplus, directory '/usr/lib/pkgconfig' not empty so not removed
-???
-sudo rm /usr/lib/pkgconfig/libdmmp.pc
-
-
-mono_crash.mem.11374.1.blob
-because of rm /etc/mono/certstore/
