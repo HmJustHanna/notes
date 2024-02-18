@@ -1,6 +1,30 @@
-ubuntu server 22.04
+ubuntu server 22.04 and dwm
+
+
+
 sudo apt update && sudo apt upgrade
+
+DWM and DMENU
+
+wget https://dl.suckless.org/tools/dmenu-5.2.tar.gz
+wget https://dl.suckless.org/dwm/dwm-6.4.tar.gz
+
+FONTS
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
+sudo apt install unzip
+unzip ~/Downloads/Hack.zip -d /usr/share/fonts
 
 git clone https://git.suckless.org/dwm
 git clone https://git.suckless.org/dmenu
 git clone https://git.suckless.org/st
+
+sudo vim config.def.h:
+st -> urxvt
+sudo make clean install
+
+default conf -> main conf
+config.def.h -> config.h
+
+#define SWAPWORKSPACESONLASTWINDOWCLOSE 1
+

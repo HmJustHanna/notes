@@ -44,10 +44,6 @@ clipit
 moc
 lxappereance
 
-mypaint
-drawing
-fbreader
-
 git clone https://HmJustHanna/i3wm...
 
 git clone https://github.com/soimort/translate-shell
@@ -55,11 +51,11 @@ cd translate-shell/
 make
 sudo make install
 
+CLOUDINIT
 
+/etc/cloud/cloud-init.disabled
 
 CONFIGURATION
-
-
 
 XBACKLIGHT
 
@@ -73,8 +69,6 @@ EndSection
 
 logout and login again
 
-
-
 KEYBOARD
 
 setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
@@ -82,12 +76,14 @@ setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
 localectl list-x11-keymap-variants
 localectl list-x11-keymap-options
 
+PULSEAUDIO
 
-
+sudo apt install pulseaudio
+pulseaudio
+pactl set-sink-mute @DEFAULT_SINK@ toggle
+pactl set-sink-volume @DEFAULT_SINK@ +50%
 
 FIREFOX 
-
-
 
 *Create an APT keyring*
 sudo install -d -m 0755 /etc/apt/keyrings
@@ -117,11 +113,7 @@ sudo apt update && sudo apt install firefox
 apt-cache search firefox-l10n.
 sudo apt install firefox-l10n-fr
 
-
-
 GH (GITHUB CLI)
-
-
 
 log in whith browser first
 or without browser and via auth token
@@ -135,19 +127,12 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 
 gh auth login
 
-
-
 FEH
 
-
-
 xrandr | grep '*' | awk '{ print $1 }'
+feh --bg-scale $HOME/Pictures/img.jpeg
 
-
-
-FONTS
-
-
+FONT-AWESOME
 
 mkdir ~/.fonts
 git clone https://github.com/FortAwesome/Font-Awesome/releases/tag/6.5.16/
@@ -157,5 +142,6 @@ mv *.otf ~/.fonts
 https://fontawesome.com/v4/cheatsheet/	
 search font awesome cheatsheet and copy paste
 
+THERMAL ZONES
 
-
+paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'
