@@ -62,9 +62,9 @@ XBACKLIGHT
 check your /sys/class/backlight for folder intel_backlight
 creating a /etc/X11/xorg.conf file:
 Section "Device"
-    Identifier  "Intel Graphics" 
-    Driver      "intel"
-    Option      "Backlight"  "intel_backlight"
+        Identifier      "Intel Graphics"
+        Driver          "intel"
+        Option          "Backlight"     "/sys/class/backlight/intel_backlight"
 EndSection
 
 logout and login again
@@ -145,3 +145,61 @@ search font awesome cheatsheet and copy paste
 THERMAL ZONES
 
 paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'
+
+
+
+
+
+
+UBUNTU SERVER 22.04 AND DWM
+
+sudo apt update && sudo apt upgrade
+
+DWM and DMENU
+
+wget https://dl.suckless.org/tools/dmenu-5.2.tar.gz
+wget https://dl.suckless.org/dwm/dwm-6.4.tar.gz
+
+OR?
+
+git clone https://git.suckless.org/dwm
+git clone https://git.suckless.org/dmenu
+git clone https://git.suckless.org/st
+
+
+FONTS
+
+*sudo apt install unzip
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
+unzip ~/Downloads/Hack.zip -d /usr/share/fonts
+
+
+TERMINAL
+
+sudo vim config.def.h:
+st -> urxvt
+sudo make clean install
+
+default conf -> main conf
+config.def.h -> config.h
+
+
+KEYBINDINGS
+
+Add #include <X11/XF86keysym.h> to dwm.c file
+{ 0,          XF86XK_AudioRaiseVolume,     spawn,      {.v = volu } },
+
+#define SWAPWORKSPACESONLASTWINDOWCLOSE 1
+
+
+COLORS
+
+pink
+
+#fb6f92
+#ff8fab
+ff8fab
+
+
+
