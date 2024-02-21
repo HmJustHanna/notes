@@ -29,7 +29,7 @@ network:
 
 *for available nets see $ sudo iwlist wlp2s0 scan*
 *exit from root user    $ exit*
-
+sudo chmod 600
 
 
 ADDITIONALLY
@@ -139,6 +139,8 @@ git clone https://github.com/FortAwesome/Font-Awesome/releases/tag/6.5.16/
 fontawesome-free-6.5.1-desktop.zip
 mv *.otf ~/.fonts
 
+OR mv ... /usr/share/fonts/
+
 https://fontawesome.com/v4/cheatsheet/	
 search font awesome cheatsheet and copy paste
 
@@ -202,4 +204,6 @@ pink
 ff8fab
 
 
+RANGER
 
+ranger --copy-config=all
