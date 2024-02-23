@@ -1,8 +1,48 @@
-UBUNTU-SERVER 22.04
+ __  __          __                    
+/\ \/\ \        /\ \__                 
+\ \ `\\ \    ___\ \ ,_\    __    ____  
+ \ \ , ` \  / __`\ \ \/  /'__`\ /',__\ 
+  \ \ \`\ \/\ \L\ \ \ \_/\  __//\__, `\
+   \ \_\ \_\ \____/\ \__\ \____\/\____/
+    \/_/\/_/\/___/  \/__/\/____/\/___/ 
 
-MAIN           
+
+NAVIGATION
+
+-MAIN SYSTEM SETTINGS-
+
+network
+keyboard
+cloudinit
+xbacklight
+pulseaudio
+
+-DWM CONFIGURATION-
+
+dwm
+dmenu
+st
+keybindings
+colors
+
+-APPS AND UTILITIES-
+
+firefox
+gh
+ranger
+
+-OTHER-
+
+fonts
+
+MAIN SYSTEM SETTINGS
 
 sudo apt update && sudo apt upgrade (with ethernet)
+dpkg-reconfigure tzdate
+sudo apt install xbacklight pulseaudio build-essentials
+
+NETWORK
+
 sudo apt install bcmwl-kernel-source (for wi-fi)
 ip add (find smth like wlp2s0)
 sudo passwd root
@@ -29,33 +69,53 @@ network:
 
 *for available nets see $ sudo iwlist wlp2s0 scan*
 *exit from root user    $ exit*
-sudo chmod 600
+sudo chmod 600 netplan.yaml ...
 
+KEYBOARD (XKB)
 
-ADDITIONALLY
+mkdir ~/.config/xkb/ && setxkbmap -layout us,ru -print > ~/.config/xkb/config
 
-v sudo apt install i3 xbacklight pulseaudio
-v sudo apt inatall build-essentials feh scrot
+xkb_keymap {
+    xkb_keycodes  { include "evdev+aliases(qwerty)" };
+    xkb_types     { include "complete"  };
+    xkb_compat    { include "complete"  };
 
-sudo apt install
+    xkb_symbols "my"  {
+        include "pc+us+ru:2+inet(evdev)"
+            key <RALT> { [ ISO_First_Group, ISO_Last_Group ] };
+    };
+    key <CAPS> { [ ISO_Level3_Shift ] };
+    name[group1] = "English (US)";
+    name[group2] = "Russian";
 
-zathura
-clipit
-moc
-lxappereance
+    key <CAPS> {
+        symbols[group1] = [ ISO_Level3_Shift ],
+        symbols[group2] = [ Caps_Lock ]
+    }
+    key <AC06> { [ h, H, KP_Left  ] };
+    key <AC07> { [ j, J, KP_Down  ] };
+    key <AC08> { [ k, K, KP_Up    ] };
+    key <AC09> { [ l, L, KP_Right ] };
+    key <SPCE> { [ space, space, BackSpace, BackSpace ] };
 
-git clone https://HmJustHanna/i3wm...
+    xkb_geometry  { include "pc(pc105)" };
+};
 
-git clone https://github.com/soimort/translate-shell
-cd translate-shell/
-make
-sudo make install
+sudo apt install xcape
+xcape -t 500 -e "ISO_Level3_Shift=Escape"
+
+OR
+
+setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+
+localectl list-x11-keymap-variants
+localectl list-x11-keymap-options
+
 
 CLOUDINIT
 
-/etc/cloud/cloud-init.disabled
 
-CONFIGURATION
+/etc/cloud/cloud-init.disabled
 
 XBACKLIGHT
 
@@ -69,12 +129,6 @@ EndSection
 
 logout and login again
 
-KEYBOARD
-
-setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
-
-localectl list-x11-keymap-variants
-localectl list-x11-keymap-options
 
 PULSEAUDIO
 
@@ -83,7 +137,37 @@ pulseaudio
 pactl set-sink-mute @DEFAULT_SINK@ toggle
 pactl set-sink-volume @DEFAULT_SINK@ +50%
 
-FIREFOX 
+DWM CONFIGURATION
+
+sudo apt update && sudo apt upgrade
+
+DWM and DMENU
+
+wget https://dl.suckless.org/tools/dmenu-5.2.tar.gz
+wget https://dl.suckless.org/dwm/dwm-6.4.tar.gz
+
+ST?
+
+I use urxvt
+
+OR?
+
+git clone https://git.suckless.org/dwm
+git clone https://git.suckless.org/dmenu
+git clone https://git.suckless.org/st
+
+KEYBINDINGS
+
+Add #include <X11/XF86keysym.h> to dwm.c file
+{ 0,          XF86XK_AudioRaiseVolume,     spawn,      {.v = volu } },
+
+COLORS
+
+APPS and UTILITIES
+
+sudo apt install zathura moc clipit feh scrot
+
+FIREFOX (DEB?)
 
 *Create an APT keyring*
 sudo install -d -m 0755 /etc/apt/keyrings
@@ -127,10 +211,23 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 
 gh auth login
 
+RANGER
+
+ranger --copy-config=all
+
 FEH
 
 xrandr | grep '*' | awk '{ print $1 }'
 feh --bg-scale $HOME/Pictures/img.jpeg
+
+OTHER
+
+FONTS
+
+*sudo apt install unzip
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
+unzip ~/Downloads/Hack.zip -d /usr/share/fonts
 
 FONT-AWESOME
 
@@ -150,60 +247,3 @@ paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/ther
 
 
 
-
-
-
-UBUNTU SERVER 22.04 AND DWM
-
-sudo apt update && sudo apt upgrade
-
-DWM and DMENU
-
-wget https://dl.suckless.org/tools/dmenu-5.2.tar.gz
-wget https://dl.suckless.org/dwm/dwm-6.4.tar.gz
-
-OR?
-
-git clone https://git.suckless.org/dwm
-git clone https://git.suckless.org/dmenu
-git clone https://git.suckless.org/st
-
-
-FONTS
-
-*sudo apt install unzip
-
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
-unzip ~/Downloads/Hack.zip -d /usr/share/fonts
-
-
-TERMINAL
-
-sudo vim config.def.h:
-st -> urxvt
-sudo make clean install
-
-default conf -> main conf
-config.def.h -> config.h
-
-
-KEYBINDINGS
-
-Add #include <X11/XF86keysym.h> to dwm.c file
-{ 0,          XF86XK_AudioRaiseVolume,     spawn,      {.v = volu } },
-
-#define SWAPWORKSPACESONLASTWINDOWCLOSE 1
-
-
-COLORS
-
-pink
-
-#fb6f92
-#ff8fab
-ff8fab
-
-
-RANGER
-
-ranger --copy-config=all
