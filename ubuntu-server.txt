@@ -12,7 +12,15 @@ NAVIGATION
 -MAIN SYSTEM SETTINGS-
 
 network
+bluetooth
+
 keyboard
+
+(dpkg-reconfigure)
+(setxkmap)
+(xkb)
+
+touchpad
 cloudinit
 xbacklight
 pulseaudio
@@ -71,7 +79,26 @@ network:
 *exit from root user    $ exit*
 sudo chmod 600 netplan.yaml ...
 
-KEYBOARD (XKB)
+BLUETOOTH
+
+wget https://github.com/winterheart/broadcom-bt-firmware/tree/master/brcm/BCM43142A0-0a5c-216d.hcd
+cp this file to /lib/firmware/brcm/
+reboot
+
+KEYBOARD
+
+!!(DPKG-RECONFIGURE)!!
+
+sudo dpkg-reconfigure keyboard-configuration
+
+(SETXKBMAP)
+
+localectl list-x11-keymap-variants
+localectl list-x11-keymap-options
+
+setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+
+(XKB)
 
 mkdir ~/.config/xkb/ && setxkbmap -layout us,ru -print > ~/.config/xkb/config
 
@@ -104,12 +131,12 @@ xkb_keymap {
 sudo apt install xcape
 xcape -t 500 -e "ISO_Level3_Shift=Escape"
 
-OR
 
-setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+TOUCHPAD
 
-localectl list-x11-keymap-variants
-localectl list-x11-keymap-options
+
+xinput --list
+cp xorg.conf /ect/X11/xorg.conf
 
 
 CLOUDINIT
