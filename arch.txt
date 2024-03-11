@@ -1,0 +1,16 @@
+sudo touch /etc/X11/xorg.conf.d/30-touchpad.conf
+vim /etc/X11/xorg.conf.d/30-touchpad.conf
+Section "InputClass"
+    Identifier "touchpad catchall"
+    Driver "libinput"
+    Option "Tapping" "on"
+EndSection
+
+sudo pacman -S libnotify
+sudo pacman -S dunst
+dunst -print (.xinitrc)
+notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-information
+mkdir .config/dunst
+cp /etc/dunst/dunstrc ~/.config/dunst/
+strace -e trace=open -o mclog mc
+
