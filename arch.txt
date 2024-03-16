@@ -14,3 +14,31 @@ mkdir .config/dunst
 cp /etc/dunst/dunstrc ~/.config/dunst/
 strace -e trace=open -o mclog mc
 
+sudo paman -S
+vim
+git
+git-client
+
+rxvt-unicode
+firefox
+lf
+
+mpv
+yt-dlp
+fzf
+jq
+ueberzug
+yt-fzf
+
+neofetch
+translate-shell
+xclip
+
+DWM
+
+patch -p1 < path/to/patch.diff
+
+DENY=0
+
+from https://bugs.archlinux.org/task/67644
+You can set 'deny = 0' in /etc/security/faillock.conf to disable the lockout feature. 
