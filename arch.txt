@@ -36,6 +36,7 @@ xclip
 
 zathura
 zathura-djvu
+wmctrl (for dmenu script called "via")
 
 DWM
 
@@ -49,4 +50,14 @@ You can set 'deny = 0' in /etc/security/faillock.conf to disable the lockout fea
 YAY
 
 git clone https://aur.archlinux.org/yay.git
+
+GH
+
+gh extension install dlvhdr/gh-dash
 makepkg -si
+
+
+DEPS I NEED
+
+xorg-xset
+faad
