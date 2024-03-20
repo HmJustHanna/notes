@@ -61,3 +61,10 @@ DEPS I NEED
 
 xorg-xset
 faad
+
+SYSTEMD
+
+sudo vim /etc/systemd/system/slock@.service
+https://wiki.archlinux.org/title/Slock
+systemctl enable slock@anna.service
+
