@@ -68,3 +68,10 @@ sudo vim /etc/systemd/system/slock@.service
 https://wiki.archlinux.org/title/Slock
 systemctl enable slock@anna.service
 
+IRC
+
+https://irssi.org/New-users/
+https://libera.chat/guides/registration
+ircs://irc.libera.chat/archlinux-newbie
+
+/msg NickServ IDENTIFY YourNick YourPassword
